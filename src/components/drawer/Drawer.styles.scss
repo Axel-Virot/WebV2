@@ -1,0 +1,90 @@
+#drawer {
+  .MuiDrawer-paper {
+    box-sizing: border-box;
+    box-shadow: 0 2px 6px 0 rgba(161,172,184, 15%);
+    border: none;
+
+    .logo-box > a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 12px;
+      width: 100%;
+      height: 64px;
+      min-height: 64px;
+      text-decoration: none;
+      color: #566a7f;
+
+      .logo {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+      }
+
+      .title {
+        font-weight: 900;
+        font-size: 1.75rem;
+        letter-spacing: -0.5px
+      }
+    }
+  }
+
+  .sections {
+    width: 100%;
+    max-width: 360px;
+    position: relative;
+    overflow: auto;
+    margin-right: 10px;
+    padding: 0;
+ 
+    li > ul {
+      padding: 0;
+
+      li {
+        padding-left: 15px;
+
+        a {
+          width: 212px;
+          padding-left: 0;
+          padding-right: 0;
+          border-radius: 5px;
+        }
+
+        .currentLocation {
+          color: #1E9E34;
+          background-color: rgba(30,158,52,.16) !important;
+
+          .icon .MuiSvgIcon-root {
+            color: #1E9E34;
+          }
+        }
+      }
+    }
+
+    .MuiListSubheader-root {
+      color: #a1acb8;
+      padding: 0 0 0 30px;
+      margin: 0;
+    }
+
+    .MuiListSubheader-root::before {
+      background-color: #a1acb8 !important;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.4rem;
+      width: 1rem;
+      height: 1px;
+      transition: all .3s ease-in-out;
+    }
+  }
+}
+
+.icon .MuiSvgIcon-root {
+  color: #566a7f;
+  margin-left: 15px;
+  width: 22px;
+  height: 22px;
+}
