@@ -1,18 +1,32 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import AuthContainer from "components/auth-container/AuthContainer";
-import { FormControlLabel, Typography, Button, Box, FormGroup, TextField } from "@mui/material";
-import * as ReactForm from "react-hook-form";
+import { Typography, Box, FormGroup, TextField } from "@mui/material";
+import { LoadingButton } from '@mui/lab';
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as Logo } from "icons/list-rocket.svg";
+import axios from "axios";
 
 function Register() {
-  const { register, watch, handleSubmit, formState: { errors } } = ReactForm.useForm();
+  const { register, watch, handleSubmit, formState: { errors } } = useForm();
   const password = watch("password", "");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
+    setLoading(true);
+    axios.post("/register", data)
+    .then((data) => {
+      console.log(data);
+      setLoading(false);
+      navigate("/confirm-email")
+    }).catch((err) => {
+      console.log(err);
+      setLoading(false);
+    })
   }
 
   return (
@@ -28,7 +42,7 @@ function Register() {
             margin="dense"
             variant="standard"
             required
-            {...register("username", {
+            {...register("nickname", {
               required: "Username is required",
               minLength: {value: 4, message: "Username must between 4 and 16 characters"},
               maxLength: {value: 16, message: "Username must between 4 and 16 characters"},
@@ -112,7 +126,7 @@ function Register() {
               shrink: true,
             }}
           />
-          <Button type="submit" variant="contained">Register</Button>
+          <LoadingButton loading={loading} type="submit" variant="contained">Register</LoadingButton>
         </FormGroup>
       </form>
       <Typography align="center" variant="body2">Already have an account ? <Link to="/login">Login</Link></Typography>

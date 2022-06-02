@@ -1,6 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from 'axios';
 
 import Theme from './Global.theme'
 
@@ -13,6 +14,8 @@ import Register from "./pages/register/Register";
 import './App.scss'
 
 function App() {
+  axios.defaults.baseURL = "http://localhost:5000";
+
   return (
     <>
       <CssBaseline />
