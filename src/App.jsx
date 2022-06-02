@@ -11,47 +11,37 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 /* MUI import
 */
-import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import axios from 'axios';
 
-/* Project import
-*/
-import Drawer from './components/drawer/Drawer';
-import Header from './components/header/Header';
-import Home from './pages/home/Home'
-import Profile from './pages/profile/Profile';
-import Recipes from './pages/recipes/Recipes';
-import { drawerWidth } from './components/drawer/Drawer.config';
-import Theme from './Global.theme'
-import './App.styles.scss'
+import Theme from './Global.theme';
+
+import Home from './pages/home/Home';
+import Profile from "./pages/profile/Profile";
+import Recipes from "./pages/recipes/Recipes";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import ConfirmEmail from "pages/confirm-email/ConfirmEmail";
+
+import './App.style.scss';
 
 function App() {
-  //Methode de chacalus, redux > ça
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  axios.defaults.baseURL = "http://localhost:5000";
 
   return (
     <>
       <CssBaseline />
       <ThemeProvider theme={Theme}>
         <BrowserRouter>
-          <Drawer mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
-          <Box id='main'
-            sx={{
-              width: { md: `calc(100% - ${drawerWidth})` },
-              ml: { md: drawerWidth },
-            }}>
-            <Header handleDrawerToggle={handleDrawerToggle}/>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/new-recipe" element={<Recipes />} />
-              <Route path="/profile" element={<Profile />} />
-            </Routes>
-          </Box>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new-recipe" element={<Recipes />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/confirm-email" element={<ConfirmEmail />} />
+          </Routes>
         </BrowserRouter>
       </ThemeProvider>
     </>

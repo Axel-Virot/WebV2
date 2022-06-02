@@ -1,0 +1,16 @@
+#auth-container {
+  background-color: #f5f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  #logo-container {
+    display: flex;
+    justify-content: center;
+
+    #list-rocket-logo {
+      width: 5em;
+    }
+  }
+}

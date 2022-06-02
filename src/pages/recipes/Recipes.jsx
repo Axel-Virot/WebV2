@@ -1,7 +1,9 @@
 import * as React from 'react';
 
+import Page from "components/page/Page";
+
 function Recipes(props) {
-    return (<></>);
+    return (<Page>recipes</Page>);
 }
 
 export default Recipes;
