@@ -11,26 +11,23 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 /* MUI import
 */
-import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from 'axios';
 
-import Theme from './Global.theme'
+import Theme from './Global.theme';
 
-import Home from './pages/home/Home'
+import Home from './pages/home/Home';
 import Profile from "./pages/profile/Profile";
 import Recipes from "./pages/recipes/Recipes";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import ConfirmEmail from "pages/confirm-email/ConfirmEmail";
 
-import './App.style.scss'
+import './App.style.scss';
 
 function App() {
-  //Methode de chacalus, redux > ça
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  axios.defaults.baseURL = "http://localhost:5000";
 
   return (
     <>
