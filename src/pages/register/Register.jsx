@@ -22,7 +22,7 @@ function Register() {
     .then((data) => {
       console.log(data);
       setLoading(false);
-      navigate("/confirm-email")
+      navigate(`/confirm-email&email=${data.email}`)
     }).catch((err) => {
       console.log(err);
       setLoading(false);

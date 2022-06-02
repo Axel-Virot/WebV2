@@ -10,6 +10,7 @@ import Profile from "./pages/profile/Profile";
 import Recipes from "./pages/recipes/Recipes";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import ConfirmEmail from "pages/confirm-email/ConfirmEmail";
 
 import './App.scss'
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/confirm-email" element={<ConfirmEmail />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
