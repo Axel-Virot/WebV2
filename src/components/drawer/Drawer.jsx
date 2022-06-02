@@ -34,12 +34,7 @@ import { ReactComponent as Logo } from "icons/list-rocket.svg";
 import './Drawer.styles.scss';
 
 function Drawer(props) {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
   const location = useLocation();
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
 
   const drawer = (
     <>
@@ -57,7 +52,9 @@ function Drawer(props) {
             {routesConfig.map((section) => (
               <li key={`section-${section.index}`}>
                 <ul>
+                  {section.displayName ? 
                   <ListSubheader>{section.displayName}</ListSubheader>
+                  : null}
                   {section.routes.map((route) => (
                     <ListItem key={`item-${route.index}`} disablePadding>
                       <ListItemButton
@@ -83,8 +80,8 @@ function Drawer(props) {
     <>
       <MuiDrawer id='drawer'
         variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
+        open={props.mobileOpen}
+        onClose={props.handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
         }}

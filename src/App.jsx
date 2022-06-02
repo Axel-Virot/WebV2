@@ -1,3 +1,17 @@
+/* Name:        App.jsx
+** Last modif:  30/05/2022 - Axel Virot
+** Description: App is the website base code and routing system
+** Export:      App
+*/
+
+/* React import
+*/
+import * as React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+/* MUI import
+*/
+import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,10 +26,11 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import ConfirmEmail from "pages/confirm-email/ConfirmEmail";
 
-import './App.scss'
+import './App.style.scss'
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:5000";
+  //Methode de chacalus, redux > ça
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
     <>

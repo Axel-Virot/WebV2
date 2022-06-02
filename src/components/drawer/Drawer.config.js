@@ -25,83 +25,84 @@ export const drawerWidth = '260px';
 /* Drawer routes for Subheader and Link elements
 */
 export const routesConfig =
-[
-    {
-        index: "general",
-        displayName: "GENERAL",
-        routes: [
-            {
-                index: "accueil",
-                href: "/",
-                displayName: "Accueil",
-                icon: <HomeOutlinedIcon />,
-            },
-            {
-                index: "my-fridge",
-                href: "/my-fridge",
-                displayName: "Mon frigo",
-                icon: <AcUnitOutlinedIcon />,
-            },
-            {
-                index: "my-calendar",
-                href: "/my-calendar",
-                displayName: "Calendrier",
-                icon: <CalendarMonthOutlinedIcon />,
-            }
-        ]
-    },
-    {
-        index: "recette",
-        displayName: "RECETTE",
-        routes: [
-            {
-                index: "recipes",
-                href: "/recipes",
-                displayName: "Catalogue",
-                icon: <LibraryBooksOutlinedIcon />,
-            },
-            {
-                index: "new-recipe",
-                href: "/new-recipe",
-                displayName: "Creation",
-                icon: <RestaurantOutlinedIcon />,
-            },
-            {
-                index: "favoris",
-                href: "/favoris",
-                displayName: "Favoris",
-                icon: <FavoriteBorderOutlinedIcon />,
-            },
-            {
-                index: "my-receipt",
-                href: "/my-receipt",
-                displayName: "Inventaire",
-                icon: <WorkOutlineOutlinedIcon />,
-            },
-            {
-                index: "recipe-from-fridge",
-                href: "/recipe-from-fridge",
-                displayName: "Cuisinable",
-                icon: <MicrowaveOutlinedIcon />,
-            }
-        ]
-    },
-    {
-        index: "course",
-        displayName: "COURSE",
-        routes: [
-            {
-                index: "shopping-list",
-                href: "/shopping-list",
-                displayName: "Liste",
-                icon: <ListAltOutlinedIcon />,
-            },
-            {
-                index: "orders",
-                href: "/orders",
-                displayName: "Commande",
-                icon: <ShoppingCartOutlinedIcon />,
-            }
-        ]
-    }
-];
+	[
+		{
+			index: "general",
+			displayName: "",
+			routes: [
+				{
+					index: "accueil",
+					href: "/",
+					displayName: "Accueil",
+					icon: <HomeOutlinedIcon />,
+				},
+				{
+					index: "my-calendar",
+					href: "/my-calendar",
+					displayName: "Calendrier",
+					icon: <CalendarMonthOutlinedIcon />,
+				}
+			]
+		},
+		{
+			index: "recette",
+			displayName: "RECETTES",
+			routes: [
+				{
+					index: "recipes",
+					href: "/recipes",
+					displayName: "Recettes",
+					icon: <LibraryBooksOutlinedIcon />,
+				},
+				{
+					index: "new-recipe",
+					href: "/new-recipe",
+					displayName: "Créer une recette",
+					icon: <RestaurantOutlinedIcon />,
+				},
+				{
+					index: "my-receipt",
+					href: "/my-receipt",
+					displayName: "Mes créations",
+					icon: <WorkOutlineOutlinedIcon />,
+				},
+				{
+					index: "my-fridge",
+					href: "/my-fridge",
+					displayName: "Mon frigo",
+					icon: <AcUnitOutlinedIcon />,
+				},
+				{
+					index: "recipe-from-fridge",
+					href: "/recipe-from-fridge",
+					displayName: "Recettes cuisinables",
+					icon: <MicrowaveOutlinedIcon />,
+				},
+				{
+					index: "favoris",
+					href: "/favoris",
+					displayName: "Mes favoris",
+					icon: <FavoriteBorderOutlinedIcon />,
+				}
+
+			]
+		},
+		{
+			index: "course",
+			displayName: "COURSES",
+			routes: [
+				{
+					index: "shopping-list",
+					href: "/shopping-list",
+					displayName: "Liste de courses",
+					icon: <ListAltOutlinedIcon />,
+				},
+				{
+					index: "orders",
+					href: "/orders",
+					displayName: "Passer commande",
+					icon: <ShoppingCartOutlinedIcon />,
+				}
+			]
+		}
+	];
