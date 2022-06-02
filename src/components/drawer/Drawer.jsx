@@ -30,7 +30,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 /* Project import
 */
 import { drawerWidth, routesConfig } from './Drawer.config';
-import { ReactComponent as Logo } from "./logo.svg";
+import { ReactComponent as Logo } from "icons/list-rocket.svg";
 import './Drawer.styles.scss';
 
 function Drawer(props) {

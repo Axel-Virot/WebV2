@@ -2,9 +2,10 @@ import * as React from "react";
 
 import { Link } from "react-router-dom";
 import AuthContainer from "components/auth-container/AuthContainer";
-import { FormControlLabel, Typography, Button, Checkbox, FormGroup } from "@mui/material";
+import { FormControlLabel, Typography, Button, Box, FormGroup } from "@mui/material";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
+import { ReactComponent as Logo } from "icons/list-rocket.svg";
 
 function Register() {
   const [username, setUsername] = React.useState("");
@@ -20,6 +21,9 @@ function Register() {
 
   return (
     <AuthContainer>
+      <Box id="logo-container">
+        <Logo id="list-rocket-logo" />
+      </Box>
       <Typography align="center" variant="h4">List Rocket</Typography>
       <ValidatorForm
         onSubmit={handleSubmit}
