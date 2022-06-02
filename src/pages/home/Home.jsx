@@ -1,7 +1,9 @@
 import * as React from 'react';
 
+import Page from "components/page/Page";
+
 function Home(props) {
-    return (<></>);
+    return (<Page>Home</Page>);
 }
 
 export default Home;
